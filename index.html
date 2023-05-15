@@ -3,16 +3,20 @@
     <script>
       function getRandomNumber(){
       const RandomNumber = Math.floor(Math.random()*10)
+      const sRandomNumber = String(RandomNumber)
       let userNumber = prompt('Угадайте число от 1 до 10:')
-      if (userNumber < RandomNumber){
-        console.log('Ваше число меньше загаданного: ', RandomNumber)
+      if (userNumber === sRandomNumber){
+        console.log('Вы угадали  число: ', sRandomNumber )
       }
-      else if (userNumber > RandomNumber){
-        console.log('Ваше число больше загаданного: ', RandomNumber)
+      else if (userNumber < sRandomNumber){
+        console.log('Ваше число меньше загаданного: ', sRandomNumber)
       }
-      else{
+      else if (userNumber > sRandomNumber){
+        console.log('Ваше число больше загаданного: ', sRandomNumber)
+      }
+      /*else{
         console.log('Вы угадали  число: ', RandomNumber )
-      }
+      }*/
     }
 
     getRandomNumber()
