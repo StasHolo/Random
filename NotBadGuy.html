@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <script>
+let goodMan = {
+        Health: 0 ,
+        attacks: 0,
+        protection: 0,
+      }
+      let badMan = {
+        Health: 0 ,
+        attacks: 0 ,
+        protection: 0,
+      }
+      let evilMan = {
+        Health: 0 ,
+        attacks: 0 ,
+        protection: 0,
+      }
+      goodMan.Health = prompt('Введите кол-во здоровья для хорошего парня:')
+      goodMan.attacks = prompt('Введите значение атаки для хорошего парня:')
+      goodMan.protection= prompt('Введите значение защиты для хорошего парня:')
+
+      badMan.Health = prompt('Введите кол-во здоровья для плохого парня:')
+      badMan.attacks = prompt('Введите значение атаки для плохого парня:')
+      badMan.protection= prompt('Введите значение защиты для плохого парня:')
+
+      evilMan.Health = prompt('Введите кол-во здоровья для злого парня:')
+      evilMan.attacks = prompt('Введите значение атаки для злого парня:')
+      evilMan.protection= prompt('Введите значение защиты для злого парня:')
+    </script>
+    <style>
+      .mans{
+        display: flex;
+      }
+      .man{
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> Хороший, плохой, злой</h1>
+    <div class = "mans">
+    <div class="man"> <h2>Хороший парень:</h2><h2 id = "good-man"> Хороший</h2></div>
+    <div class="man"> <h2>Плохой парень:</h2><h2 id = "bad-man"> Плохой</h2></div>
+    <div class="man"> <h2>Злой парень:</h2><h2 id = "evil-man"> Злой</h2></div>
+  </div>
+  <div> <h2 id="winner"> Победитель</h2></div>
+
+    <script>
+      
+    
+    function getWinPoints(manPoints) {
+      const allManPoints = parseInt(manPoints.Health) + parseInt(manPoints.attacks) + parseInt(manPoints.protection)
+      return allManPoints
+    }
+      
+    const goodElement = document.getElementById("good-man")
+    goodElement.innerHTML = getWinPoints(goodMan)
+
+    const badElement = document.getElementById("bad-man")
+    badElement.innerHTML = getWinPoints(badMan)
+
+    const evilElement = document.getElementById("evil-man")
+    evilElement.innerHTML = getWinPoints(evilMan)
+
+if (getWinPoints(goodMan) > getWinPoints(badMan) && getWinPoints(goodMan) > getWinPoints(evilMan)){
+  const winElement = document.getElementById("winner")
+    winElement.innerHTML = "Победил хороший парень!"
+}
+else if (getWinPoints(badMan) > getWinPoints(goodMan) && getWinPoints(badMan) > getWinPoints(evilMan)){
+  const winElement = document.getElementById("winner")
+    winElement.innerHTML = "Победил плохой парень!"
+}
+else if (getWinPoints(evilMan) > getWinPoints(goodMan) && getWinPoints(evilMan) > getWinPoints(badMan)){
+  const winElement = document.getElementById("winner")
+    winElement.innerHTML = "Победил злой парень!"
+}
+    </script>
+  </body>
+</html>
