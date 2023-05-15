@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <script>
+      function getRandomNumber(){
+      const RandomNumber = Math.floor(Math.random()*10)
+      let userNumber = prompt('Угадайте число от 1 до 10:')
+      if (userNumber < RandomNumber){
+        console.log('Ваше число меньше загаданного: ', RandomNumber)
+      }
+      else if (userNumber > RandomNumber){
+        console.log('Ваше число больше загаданного: ', RandomNumber)
+      }
+      else{
+        console.log('Вы угадали  число: ', RandomNumber )
+      }
+    }
+
+    getRandomNumber()
+      
+    </script>
+  </head>
+</html>
